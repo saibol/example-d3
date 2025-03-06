@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Line Chart with D3.js and React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements a line chart using **D3.js** in a **React** component. It dynamically renders a line graph based on input data.
 
-## Available Scripts
+## Features
+- Renders a responsive line chart using D3.js
+- Supports dynamic data updates
+- Displays horizontal grid lines for better readability
+- Uses a linear curve for sharp angles
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/line-chart-d3-react.git
+   cd line-chart-d3-react
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+Import the `LineChart` component and provide it with data:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```jsx
+import LineChart from "./LineChart";
 
-### `npm run build`
+const data = [
+  { date: "2024-01-01", value: 10 },
+  { date: "2024-01-02", value: 15 },
+  { date: "2024-01-03", value: 8 },
+  { date: "2024-01-04", value: 20 }
+];
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function App() {
+  return (
+    <div>
+      <h2>Line Chart</h2>
+      <LineChart data={data} width={600} height={400} />
+    </div>
+  );
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default App;
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dependencies
+- React
+- D3.js
 
-### `npm run eject`
+## Customization
+- Modify the `width` and `height` props to change the chart size.
+- Adjust the color of the line by changing `stroke` in the `<path>` element.
+- Modify the axis formatting in `d3.axisBottom` and `d3.axisLeft`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Output
+![Line Chart Output](src/line-graph.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+This project is licensed under the MIT License.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
